@@ -8,6 +8,7 @@
 var webdriver = require('selenium-webdriver'),
     protractor = require('protractor'),
     runner = require('../lib/runner'),
+    reporter = require('../lib/reporter'),
     Mocha = require('mocha'),
     path = require('path'),
     Module = require('module'),
@@ -19,6 +20,9 @@ module.exports = function(grunt) {
         options = this.options({
           browsers: ['Chrome']
         });
+
+    // wrap reporter
+    options.reporter = reporter(options.reporter);
 
     grunt.util.async.forEachSeries(options.browsers, function(browser, next) {
       if (typeof webdriver.Capabilities[browser.toLowerCase()] !== 'function') {
