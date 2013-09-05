@@ -48,6 +48,39 @@ Default value: `['Chrome']`
 
 List of browsers to test with.
 
+#### options.reporter
+
+Type: `String`
+Default value: `Spec`
+
+Mocha reporter to use
+
+#### options.baseUrl
+
+Type: `String`
+Default value: ``
+
+#### options.args
+
+Type: `Array`
+Default value: `null`
+
+Example of full config
+
+```js
+grunt.initConfig({
+  mochaProtractor: {
+    options: {
+      browsers: ['Chrome', 'Firefox'],
+      reporter: 'Spec',
+      baseUrl: 'https://develop.mywebsite.local',
+      args: '--ignore-certificate-errors'
+    },
+    files: ['test/e2e/*.js']0
+  },
+})
+```
+
 ## Contributing
 
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
