@@ -18,7 +18,10 @@ module.exports = function(grunt) {
   grunt.registerMultiTask('mochaProtractor', 'The best Grunt plugin ever.', function() {
     var files = this.files,
         options = this.options({
-          browsers: ['Chrome']
+          browsers: ['Chrome'],
+          reporter: 'Spec',
+          baseUrl : '',
+          args: null
         });
 
     // wrap reporter
