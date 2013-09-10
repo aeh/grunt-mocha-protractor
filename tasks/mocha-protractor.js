@@ -15,7 +15,7 @@ var webdriver = require('selenium-webdriver'),
     expect = require('expect.js');
 
 module.exports = function(grunt) {
-  grunt.registerMultiTask('mochaProtractor', 'The best Grunt plugin ever.', function() {
+  grunt.registerMultiTask('mochaProtractor', 'Run e2e angular tests with webdriver.', function() {
     var files = this.files,
         options = this.options({
           browsers: ['Chrome'],
