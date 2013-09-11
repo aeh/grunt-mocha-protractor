@@ -34,6 +34,7 @@ module.exports = function(grunt) {
       saucelabs: {
         options: {
           reporter: 'Spec',
+          sauceTunnelId: process.env.TRAVIS_JOB_NUMBER,
           browsers: [
             {
               base: 'SauceLabs',
