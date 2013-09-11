@@ -32,7 +32,7 @@ grunt.initConfig({
     options: {
       browsers: ['Chrome', 'Firefox']
     },
-    files: ['test/e2e/*.js']
+    files: ['test/*.js']
   },
 })
 ```
@@ -47,6 +47,24 @@ Type: `Array`
 Default value: `['Chrome']`
 
 List of browsers to test with.
+
+To test with SauceLabs the browser can also be specified as an object.
+
+```js
+grunt.initConfig({
+  mochaProtractor: {
+    options: {
+      reporter: 'Spec',
+      browsers: [{
+        base: 'SauceLabs',
+        browserName: 'Firefox',
+        platform: 'Windows 7',
+        version: '23'
+      }]
+    },
+    files: ['test/*.js']
+  },
+```
 
 #### options.reporter
 
@@ -76,7 +94,7 @@ grunt.initConfig({
       baseUrl: 'https://develop.mywebsite.local',
       args: '--ignore-certificate-errors'
     },
-    files: ['test/e2e/*.js']0
+    files: ['test/*.js']
   },
 })
 ```
