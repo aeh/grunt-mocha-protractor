@@ -5,7 +5,7 @@ describe('angularjs.org homepage', function() {
   it('should greet using binding', function(done) {
     var ptor = this.ptor;
 
-    ptor.get('http://www.angularjs.org');
+    ptor.get('http://localhost:3000/');
 
     ptor.findElement(protractor.By.input('yourName')).sendKeys('Julie');
 
@@ -19,7 +19,7 @@ describe('angularjs.org homepage', function() {
   it('should list todos', function(done) {
     var ptor = this.ptor;
 
-    ptor.get('http://www.angularjs.org');
+    ptor.get('http://localhost:3000/');
 
     var todo = ptor.findElement(
         protractor.By.repeater('todo in todos').row(2));

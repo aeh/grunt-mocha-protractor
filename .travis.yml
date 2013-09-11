@@ -1,0 +1,16 @@
+language: node_js
+node_js:
+  - "0.10"
+  - "0.8"
+
+before_script:
+  - "curl https://gist.github.com/santiycr/5139565/raw/sauce_connect_setup.sh | bash"
+  - "npm install grunt-cli"
+
+env:
+  global:
+    - secure: "CnG0dxmgyUgCqmcSAEh7JJDDPlDB51S7x6NvOLd+IPgfh51nTZDOKzIzaffS1Sg9EUitFgq5mYvbrxqI5Jp/b5lU102WK2pcTcvR9F4JqYdCaEYRGu6YZ2ZsolF0fcMDPud6xjB6tK6881FiRnAaUHO1zsqgPUJ3vC4/fjZmUTs="
+    - secure: "Sc10ucvvxEeKp9kBrxpeBLieyB0CRYgAP3+h4QvzkVm61yR7UvrDdKe6qJ7tP1LorXgAAGgohuSXOWdJHCamgGlt2PjGVFAY/vlDWAvvhvKz3N1XJo388lOxAC8ocBbeaEx6Spycu17QHGgYiSZIKMeTDHw1U2cYXJmpZGSBX7U="
+
+script:
+  - "grunt test:saucelabs"

@@ -9,7 +9,7 @@ This plugin requires Grunt `~0.4.1`
 If you haven't used [Grunt](http://gruntjs.com/) before, be sure to check out the [Getting Started](http://gruntjs.com/getting-started) guide, as it explains how to create a [Gruntfile](http://gruntjs.com/sample-gruntfile) as well as install and use Grunt plugins. Once you're familiar with that process, you may install this plugin with this command:
 
 ```shell
-npm install git+https://github.com/aeh/grunt-mocha-protractor.git --save-dev
+npm install grunt-mocha-protractor --save-dev
 ```
 
 Once the plugin has been installed, it may be enabled inside your Gruntfile with this line of JavaScript:
@@ -32,7 +32,7 @@ grunt.initConfig({
     options: {
       browsers: ['Chrome', 'Firefox']
     },
-    files: ['test/e2e/*.js']
+    files: ['test/*.js']
   },
 })
 ```
@@ -47,6 +47,24 @@ Type: `Array`
 Default value: `['Chrome']`
 
 List of browsers to test with.
+
+To test with SauceLabs the browser can also be specified as an object.
+
+```js
+grunt.initConfig({
+  mochaProtractor: {
+    options: {
+      reporter: 'Spec',
+      browsers: [{
+        base: 'SauceLabs',
+        browserName: 'Firefox',
+        platform: 'Windows 7',
+        version: '23'
+      }]
+    },
+    files: ['test/*.js']
+  },
+```
 
 #### options.reporter
 
@@ -76,7 +94,7 @@ grunt.initConfig({
       baseUrl: 'https://develop.mywebsite.local',
       args: '--ignore-certificate-errors'
     },
-    files: ['test/e2e/*.js']0
+    files: ['test/*.js']
   },
 })
 ```
