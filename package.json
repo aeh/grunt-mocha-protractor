@@ -1,6 +1,6 @@
 {
   "name": "grunt-mocha-protractor",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Run e2e angular tests with webdriver.",
   "homepage": "https://github.com/noblesamuraij/grunt-mocha-protractor",
   "main": "Gruntfile.js",
