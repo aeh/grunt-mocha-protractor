@@ -49,6 +49,12 @@ module.exports = function(grunt) {
               base: 'SauceLabs',
               browserName: 'Internet Explorer',
               version: '10'
+            },
+            {
+              base: 'SauceLabs',
+              browserName: 'Internet Explorer',
+              platform: 'Windows XP',
+              version: '8'
             }
           ]
         },
