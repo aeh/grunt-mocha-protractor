@@ -2,6 +2,8 @@
 
 > Run e2e angular tests with webdriver.
 
+[![Build Status](https://travis-ci.org/noblesamurai/grunt-mocha-protractor.png)](https://travis-ci.org/noblesamurai/grunt-mocha-protractor)
+
 ## Getting Started
 
 This plugin requires Grunt `~0.4.1`
