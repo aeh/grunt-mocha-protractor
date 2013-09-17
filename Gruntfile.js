@@ -35,6 +35,7 @@ module.exports = function(grunt) {
         options: {
           reporter: 'Spec',
           sauceTunnelId: process.env.TRAVIS_JOB_NUMBER,
+          sauceSession: 'Grunt Mocha Protractor',
           browsers: [
             {
               base: 'SauceLabs',
@@ -49,12 +50,6 @@ module.exports = function(grunt) {
               base: 'SauceLabs',
               browserName: 'Internet Explorer',
               version: '10'
-            },
-            {
-              base: 'SauceLabs',
-              browserName: 'Internet Explorer',
-              platform: 'Windows XP',
-              version: '8'
             }
           ]
         },

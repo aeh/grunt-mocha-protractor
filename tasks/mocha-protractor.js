@@ -25,8 +25,7 @@ module.exports = function(grunt) {
 
           // saucelabs options
           sauceUsername: process.env.SAUCE_USERNAME,
-          sauceAccessKey: process.env.SAUCE_ACCESS_KEY,
-          sauceSession: path.basename(process.cwd())
+          sauceAccessKey: process.env.SAUCE_ACCESS_KEY
         });
 
     // wrap reporter
