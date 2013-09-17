@@ -12,7 +12,8 @@ module.exports = function(grunt) {
     jshint: {
       all: [
         'Gruntfile.js',
-        'tasks/*.js'
+        'tasks/*.js',
+        'lib/*.js'
       ],
       options: {
         jshintrc: '.jshintrc',
@@ -21,11 +22,41 @@ module.exports = function(grunt) {
 
     // Configuration to be run (and then tested).
     mochaProtractor: {
-      options: {
-        reporter: 'spec',
-        browsers: ['Chrome', 'Firefox']
+      local: {
+        options: {
+          reporter: 'Spec',
+          browsers: ['Chrome', 'Firefox']
+        },
+        files: {
+          src: 'test/*.js'
+        }
       },
-      files: 'test/*.js'
+      saucelabs: {
+        options: {
+          reporter: 'Spec',
+          sauceTunnelId: process.env.TRAVIS_JOB_NUMBER,
+          sauceSession: 'Grunt Mocha Protractor',
+          browsers: [
+            {
+              base: 'SauceLabs',
+              browserName: 'Chrome',
+              platform: 'Windows 7'
+            },
+            {
+              base: 'SauceLabs',
+              browserName: 'Firefox'
+            },
+            {
+              base: 'SauceLabs',
+              browserName: 'Internet Explorer',
+              version: '10'
+            }
+          ]
+        },
+        files: {
+          src: 'test/*.js'
+        }
+      }
     },
 
     connect: {
@@ -46,7 +77,8 @@ module.exports = function(grunt) {
 
   // Whenever the "test" task is run, first clean the "tmp" dir, then run this
   // plugin's task(s), then test the result.
-  grunt.registerTask('test', ['connect', 'mochaProtractor']);
+  grunt.registerTask('test', ['connect', 'mochaProtractor:local']);
+  grunt.registerTask('test:saucelabs', ['connect', 'mochaProtractor:saucelabs']);
 
   // By default, lint and run all tests.
   grunt.registerTask('default', ['jshint', 'test']);

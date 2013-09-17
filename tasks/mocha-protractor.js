@@ -21,18 +21,17 @@ module.exports = function(grunt) {
           browsers: ['Chrome'],
           reporter: 'Spec',
           baseUrl : '',
-          args: null
+          args: null,
+
+          // saucelabs options
+          sauceUsername: process.env.SAUCE_USERNAME,
+          sauceAccessKey: process.env.SAUCE_ACCESS_KEY
         });
 
     // wrap reporter
     options.reporter = reporter(options.reporter);
 
     grunt.util.async.forEachSeries(options.browsers, function(browser, next) {
-      if (typeof webdriver.Capabilities[browser.toLowerCase()] !== 'function') {
-        grunt.log.error('Unknown brower type: "' + browser + '"');
-        return next(false);
-      }
-
       grunt.util.async.forEachSeries(files, function(fileGroup, next) {
         runner(grunt, fileGroup, browser, options, next);
       }, next);
