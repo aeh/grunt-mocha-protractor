@@ -1,23 +1,38 @@
 {
   "name": "grunt-mocha-protractor",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Run e2e angular tests with webdriver.",
-  "homepage": "https://github.com/aeh/grunt-mocha-protractor",
+  "homepage": "https://github.com/noblesamurai/grunt-mocha-protractor",
+  "bugs": "https://github.com/noblesamurai/grunt-mocha-protractor/issues",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/noblesamurai/grunt-mocha-protractor.git"
+  },
   "main": "Gruntfile.js",
   "scripts": {
     "test": "grunt test"
   },
   "keywords": [
-    "gruntplugin"
+    "gruntplugin",
+    "mocha",
+    "protractor",
+    "selenium",
+    "webdriver",
+    "webdriverjs",
+    "angular",
+    "angularjs"
   ],
   "dependencies": {
-    "mocha": "~1.12.0",
+    "mocha": "~1.13.0",
     "selenium-webdriver": "~2.35.1",
-    "protractor": "~0.7.0",
+    "protractor": "~0.11.0",
     "expect.js": "~0.2.0"
   },
   "devDependencies": {
-    "grunt-contrib-jshint": "~0.6.0"
+    "grunt-contrib-jshint": "~0.6.0",
+    "load-grunt-tasks": "~0.1.0",
+    "grunt": "~0.4.1",
+    "grunt-contrib-connect": "~0.5.0"
   },
   "peerDependencies": {
     "grunt": "~0.4.1"
