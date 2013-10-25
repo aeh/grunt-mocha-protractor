@@ -22,7 +22,7 @@ describe('angularjs.org homepage', function() {
     ptor.get('http://localhost:3000/');
 
     var todo = ptor.findElement(
-        protractor.By.repeater('todo in todos').row(2));
+        protractor.By.repeater('todo in todos').row(1));
 
     todo.getText().then(function(text) {
       expect(text).to.eql('build an angular app');
