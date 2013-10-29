@@ -107,6 +107,7 @@ In lieu of a formal styleguide, take care to maintain the existing coding style.
 
 ## Release History
 
+* v0.3.1 - update dependencies.
 * v0.3.0 - better error handling.
 * v0.2.0 - added saucelabs support.
 * v0.1.0 - initial release.

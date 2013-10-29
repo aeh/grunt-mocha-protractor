@@ -24,8 +24,8 @@
   ],
   "dependencies": {
     "mocha": "~1.13.0",
-    "selenium-webdriver": "~2.35.1",
-    "protractor": "~0.11.0",
+    "selenium-webdriver": "~2.35.2",
+    "protractor": "~0.12.0",
     "expect.js": "~0.2.0"
   },
   "devDependencies": {
