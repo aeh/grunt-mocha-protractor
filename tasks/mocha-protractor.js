@@ -20,12 +20,16 @@ module.exports = function(grunt) {
         options = this.options({
           browsers: ['Chrome'],
           reporter: 'Spec',
-          baseUrl : '',
           args: null,
 
           // saucelabs options
           sauceUsername: process.env.SAUCE_USERNAME,
-          sauceAccessKey: process.env.SAUCE_ACCESS_KEY
+          sauceAccessKey: process.env.SAUCE_ACCESS_KEY,
+
+          // protractor config
+          baseUrl: '',
+          rootElement: '',
+          params: {}
         });
 
     // wrap reporter
