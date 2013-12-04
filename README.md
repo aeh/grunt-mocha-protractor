@@ -107,6 +107,7 @@ In lieu of a formal styleguide, take care to maintain the existing coding style.
 
 ## Release History
 
+* v0.4.0 - added protractor globals.
 * v0.3.2 - add rootElement and params options.
 * v0.3.1 - update dependencies.
 * v0.3.0 - better error handling.
