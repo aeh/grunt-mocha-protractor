@@ -5,8 +5,7 @@
 
 'use strict';
 
-var webdriver = require('selenium-webdriver'),
-    protractor = require('protractor'),
+var protractor = require('protractor'),
     runner = require('../lib/runner'),
     reporter = require('../lib/reporter'),
     Mocha = require('mocha'),
