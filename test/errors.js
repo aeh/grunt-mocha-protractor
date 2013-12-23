@@ -1,4 +1,4 @@
-var webdriver = require('selenium-webdriver'),
+var webdriver = require('protractor'),
     expect = require('expect.js');
 
 describe('catching errors', function() {
