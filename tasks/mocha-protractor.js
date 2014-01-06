@@ -5,8 +5,7 @@
 
 'use strict';
 
-var webdriver = require('selenium-webdriver'),
-    protractor = require('protractor'),
+var protractor = require('protractor'),
     runner = require('../lib/runner'),
     reporter = require('../lib/reporter'),
     Mocha = require('mocha'),
@@ -21,6 +20,7 @@ module.exports = function(grunt) {
           browsers: ['Chrome'],
           reporter: 'Spec',
           args: null,
+          seleniumUrl: 'http://localhost:4444/wd/hub',
 
           // saucelabs options
           sauceUsername: process.env.SAUCE_USERNAME,
