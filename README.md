@@ -94,7 +94,9 @@ grunt.initConfig({
       browsers: ['Chrome', 'Firefox'],
       reporter: 'Spec',
       baseUrl: 'https://develop.mywebsite.local',
-      args: '--ignore-certificate-errors'
+      args: '--ignore-certificate-errors',
+      timeout: 10000, // in milliseconds
+      suiteTimeout: 90000 // in milliseconds
     },
     files: ['test/*.js']
   },
