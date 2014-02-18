@@ -109,6 +109,7 @@ In lieu of a formal styleguide, take care to maintain the existing coding style.
 
 ## Release History
 
+* v0.5.1 - add ability to override timeouts (thanks chriscantu).
 * v0.5.0 - add seleniumUrl param, fixed "max call stack" error (thanks nowells).
 * v0.4.0 - added protractor globals.
 * v0.3.2 - add rootElement and params options (thanks AdamQuadmon).
