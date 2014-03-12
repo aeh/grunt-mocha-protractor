@@ -50,13 +50,16 @@ Default value: `['Chrome']`
 
 List of browsers to test with.
 
-To test with SauceLabs the browser can also be specified as an object.
+To test with SauceLabs the browser can also be specified as an object. You can also add session name, tags, and build.
 
 ```js
 grunt.initConfig({
   mochaProtractor: {
     options: {
       reporter: 'Spec',
+      sauceSession: 'my example name',      // optional
+      sauceBuild: 'build-1337',             // optional
+      sauceTags: ['tag1', 'tag2', 'tag3'],  // optional
       browsers: [{
         base: 'SauceLabs',
         browserName: 'Firefox',
@@ -109,6 +112,7 @@ In lieu of a formal styleguide, take care to maintain the existing coding style.
 
 ## Release History
 
+* v0.6.0 - add saucelabs job annotations params (https://saucelabs.com/docs/additional-config#metadata).
 * v0.5.2 - update dependencies.
 * v0.5.1 - add ability to override timeouts (thanks chriscantu).
 * v0.5.0 - add seleniumUrl param, fixed "max call stack" error (thanks nowells).
