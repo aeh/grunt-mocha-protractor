@@ -1,16 +1,16 @@
 language: node_js
 node_js:
+  - "0.12"
   - "0.10"
-  - "0.8"
 
 before_script:
-  - "curl https://gist.github.com/santiycr/5139565/raw/sauce_connect_setup.sh | bash"
+  - "curl https://raw.githubusercontent.com/dominicrico/connect_sauce_labs/master/sauce_connect.sh | bash"
   - "npm install grunt-cli"
 
 env:
   global:
-    - secure: "CnG0dxmgyUgCqmcSAEh7JJDDPlDB51S7x6NvOLd+IPgfh51nTZDOKzIzaffS1Sg9EUitFgq5mYvbrxqI5Jp/b5lU102WK2pcTcvR9F4JqYdCaEYRGu6YZ2ZsolF0fcMDPud6xjB6tK6881FiRnAaUHO1zsqgPUJ3vC4/fjZmUTs="
-    - secure: "Sc10ucvvxEeKp9kBrxpeBLieyB0CRYgAP3+h4QvzkVm61yR7UvrDdKe6qJ7tP1LorXgAAGgohuSXOWdJHCamgGlt2PjGVFAY/vlDWAvvhvKz3N1XJo388lOxAC8ocBbeaEx6Spycu17QHGgYiSZIKMeTDHw1U2cYXJmpZGSBX7U="
+    - secure: heXOCVnUPGjfxyPq/aJ4ONPRTYp590k7h0c6sol2eTzmzshswBRjrXvXyH1NUl6ExasBhh1WTEvaIj5kEbU/374c4xY1qYX6ro+odvinqMxY1ec1B7jyi4Pv+foJYZ3fD/0xo1DFAxuufjy/IMQbruP2CoWy2Xg+sryOTXvRLKOkDwB+ZM0u3Uc1vYcw0DXYL20ZurXwPJQZUtOXQ/cLipAKBjYVxQlJGSKEu7sSN/UAThtW8IrxTgMQacxZp8dw0udUdfIl39TsdZMLX+flucElQuSTH1vZIPNYBzgRepAj/JcSPsDIz/w4y8Km4V0YlkdduxIc+BwDJzr5uOMfvlayXQ/clYWGDImn1l2fecBIRqofrk0XoF+/G7woSEh/s5T29O4wOU/Fjzdn6lw0e8lR+dfP4mKtlBoMvfqfizkFZdimDMl6UGXvT5cy26sSR5BzR9j4CFSUnaeIHl2qCNhoGT/l47Fismv5vAqsJnJFzITVYma/OGvMSdJU9Pu7QUdOv0GNW2+QT5xsY5jU8q+N3roQECtdAioaS8VbtZ3ky54VE2JyOwlZ2zTIbnDFB+qfDhcxfN+gug5kJ71jsc0h1pglWKo2Irp6vFibu95KZi626FXS253ZZ+UOp2RG9ob0Vbh5br0ZT8PtSY6UsQG08M7cETv0jxXdhqZ3uBM=
+    - secure: LTWZnhkQBLe8PzhcWLB6BK16qsCVp2y0x27SXBDKy0b/GH+9uHpf9ONwXoKfhCNuEGuOE+OOBLwLZWAtq04E19aVAN4Sikw2k0aqBPsh73O2Z2Gi/TpefjXofKOEBqb7/cWg1z2V8tjyVP8SVK8zNfwH8OtzVM8IF5KTryfKlt31EweF5+8y3jWs7acWDbQzmvhQlyz7LVTKnf0/wkAh5CUY1T8G//UZepGKv95lO4Jy6SeCVskY6rJw99RZMnkB+rf08DmqDXcv7XJHdmmqxzPgLCKpbAajK+MQmF8FBYZC9oTKWo+WiabgioPNXs8wFCzr+mJ9ZIqllgMlZOxfgNA6daoYetAUbmKnGNiP41Lpvu4qXgjHd45gNHXk/RZC4Z3BNbqvlGJysu0m3By4FhtH6jvotN6yef42DpA4+pAyGjDMbS99bQei2L+ni9MHE1JebnOngD7V9UniFi9FktQdYgXuxQMlHDFB71rso/0UAPy8hAP2q8qy3lDoLUBpqLolo5EJpNg34QgQppizo8K+ssMgNuu59+odYJEul0oKPyadXRyBCxS1QR8jwzv0hhJN2aaHIVb6LXtAsAWAj5lHscca36cfjCTZWEN7aPWTlT9vvFZIzPm7zQdL2foWxjOfwWEQ7cjkK3eVRBz+Uns+TFJtocttzg4YTFpTD6g=
 
 script:
   - "grunt test:saucelabs"

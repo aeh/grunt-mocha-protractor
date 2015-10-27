@@ -2,7 +2,7 @@
 
 > Run e2e angular tests with webdriver.
 
-[![Build Status](https://travis-ci.org/noblesamurai/grunt-mocha-protractor.png)](https://travis-ci.org/noblesamurai/grunt-mocha-protractor)
+[![Build Status](https://travis-ci.org/dominicrico/grunt-mocha-protractor.svg)](https://travis-ci.org/dominicrico/grunt-mocha-protractor)
 
 ## Getting Started
 
@@ -11,7 +11,7 @@ This plugin requires Grunt `~0.4.1`
 If you haven't used [Grunt](http://gruntjs.com/) before, be sure to check out the [Getting Started](http://gruntjs.com/getting-started) guide, as it explains how to create a [Gruntfile](http://gruntjs.com/sample-gruntfile) as well as install and use Grunt plugins. Once you're familiar with that process, you may install this plugin with this command:
 
 ```shell
-npm install grunt-mocha-protractor --save-dev
+npm install  npm install dominicrico/grunt-mocha-protractor --save-dev
 ```
 
 Once the plugin has been installed, it may be enabled inside your Gruntfile with this line of JavaScript:
@@ -50,7 +50,7 @@ Default value: `['Chrome']`
 
 List of browsers to test with.
 
-To test with SauceLabs the browser can also be specified as an object.
+To test with SauceLabs.
 
 ```js
 grunt.initConfig({
@@ -62,6 +62,23 @@ grunt.initConfig({
         browserName: 'Firefox',
         platform: 'Windows 7',
         version: '23'
+      }]
+    },
+    files: ['test/*.js']
+  },
+```
+
+To test with PhamtomJS.
+
+```js
+grunt.initConfig({
+  mochaProtractor: {
+    options: {
+      reporter: 'Spec',
+      browsers: [{
+        'browserName': 'PhamtomJS',
+        'phantomjs.binary.path': require('phantomjs').path,
+        'phantomjs.ghostdriver.cli.args': ['--loglevel=DEBUG']
       }]
     },
     files: ['test/*.js']
@@ -109,6 +126,7 @@ In lieu of a formal styleguide, take care to maintain the existing coding style.
 
 ## Release History
 
+* v0.6.0 - added PhantomJS support.
 * v0.5.2 - update dependencies.
 * v0.5.1 - add ability to override timeouts (thanks chriscantu).
 * v0.5.0 - add seleniumUrl param, fixed "max call stack" error (thanks nowells).
