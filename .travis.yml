@@ -4,7 +4,7 @@ node_js:
   - "0.8"
 
 before_script:
-  - "curl https://gist.github.com/santiycr/5139565/raw/sauce_connect_setup.sh | bash"
+  - "curl https://raw.githubusercontent.com/dominicrico/connect_sauce_labs/master/sauce_connect.sh | bash"
   - "npm install grunt-cli"
 
 env:
