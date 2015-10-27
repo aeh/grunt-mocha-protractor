@@ -17,7 +17,11 @@ module.exports = function(grunt) {
   grunt.registerMultiTask('mochaProtractor', 'Run e2e angular tests with webdriver.', function() {
     var files = this.files,
         options = this.options({
-          browsers: ['Chrome'],
+          browsers: [{
+            'browserName': 'phantomjs',
+            'phantomjs.binary.path': require('phantomjs').path,
+            'phantomjs.ghostdriver.cli.args': ['--loglevel=DEBUG']
+          }],
           reporter: 'Spec',
           args: null,
           seleniumUrl: 'http://localhost:4444/wd/hub',
